@@ -23,9 +23,12 @@ public class BaseResult
     #region Methods
 
     public static BaseResult Concluido() => new BaseResult(true, Erro.NenhumErro());
+    public static BaseResult<T> Concluido<T>(T value) => new BaseResult<T>(value, true, Erro.NenhumErro());
 
     public static BaseResult Falhou(string mensagem) => new BaseResult(false, new Erro(mensagem));
-    
+    public static BaseResult<T> Falhou<T>(string mensagem) => new BaseResult<T>(default, false, new Erro(mensagem));
+
+    protected static BaseResult<T> Criar<T>(T value) => value != null ? Concluido(value) : Falhou<T>("");
 
     #endregion
 }
