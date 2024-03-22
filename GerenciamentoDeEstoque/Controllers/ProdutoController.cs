@@ -9,8 +9,6 @@ namespace GerenciamentoDeEstoque.Controllers;
 
 [Route("api/[controller]")]
 public class ProdutoController : ApiController
-
-
 {
     private readonly IProdutoService _produtoService;
 
