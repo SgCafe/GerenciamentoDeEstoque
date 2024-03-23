@@ -23,4 +23,11 @@ public class ProdutoController : ApiController
         BaseResult<ProdutoDto> result = await _produtoService.CriarProduto(request);
         return Retorno(result);
     }
+
+    [HttpGet]
+    public async Task<ActionResult> GetProducts()
+    {
+        BaseResult<List<ProdutoDto>> result = await _produtoService.GetProducts();
+        return Retorno(result);
+    }
 }

@@ -7,4 +7,5 @@ namespace GerenciamentoDeEstoque.Application.Services.Contracts;
 public interface IProdutoService
 {
     Task<BaseResult<ProdutoDto>> CriarProduto(CriarProdutoRequest request);
+    Task<BaseResult<List<ProdutoDto>>> GetProducts();
 }
